@@ -18,20 +18,20 @@ import javax.swing.JMenu;
 import javax.swing.JPanel;
 import javax.swing.JDialog;
 
-public class PowerSwitcher implements Runnable{
+public class AutoPowerSwitch implements Runnable{
    private static final String JAVA_ICON = "Java_Icon.png";
    private static final int SECONDS_IN_A_MINUTE = 60;
    private static final int GUID_LENGTH = 36;
    private static int minutesToWait = 20;
-   private static String POWER_SAVING_GUID = "a1841308-3541-4fab-bc81-f71556f20b4a"; 
-   private static String HIGH_PERFORMANCE_GUID = "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c";
+   private static String POWER_SAVING_GUID; 
+   private static String HIGH_PERFORMANCE_GUID;
    private static Runtime rt = Runtime.getRuntime();
    private int count = 0;
    private boolean highPerformance;
    private Point lastMouseLocation;
    private Point currentMouseLocation;
    
-   public PowerSwitcher(){
+   public AutoPowerSwitch(){
       lastMouseLocation = MouseInfo.getPointerInfo().getLocation();
    }
    
@@ -40,7 +40,7 @@ public class PowerSwitcher implements Runnable{
       writeBatch(new File("RunOnIdle.bat"), POWER_SAVING_GUID);
       writeBatch(new File("RunOnActive.bat"), HIGH_PERFORMANCE_GUID);
       
-      new Thread(new PowerSwitcher()).start();
+      new Thread(new AutoPowerSwitch()).start();
    }
    
    public static void getGUIDs(){
@@ -77,7 +77,7 @@ public class PowerSwitcher implements Runnable{
       try{
          TrayIcon icon = new TrayIcon(Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemClassLoader().getResource(JAVA_ICON)));
          icon.setImageAutoSize(true);
-         icon.setToolTip("PowOp Switcher");
+         icon.setToolTip("AutoPowerSwitch");
          
          
          JPopupMenu menu = new JPopupMenu();
