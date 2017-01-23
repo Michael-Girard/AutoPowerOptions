@@ -11,9 +11,11 @@ The program resides in the system tray and the threshold duration can be modifie
 
 ~~Due to the requirement of knowing the GUID for each Power Options settings, which vary from system to system, the current program only works on my system. To get it working on yours, you must identify your GUIDs and replace the FINAL strings with them.~~ The program is currently set to swap to High Performance when activity is detected and Power Saving when activity is not detected. ~~This can be modified at the bottom of the code by swapping in the correct GUIDs/FINAL strings in the main method.~~
 
+The Java
+
 Update January 23rd, 2017
 -----
--Changed the name to AutoPowerSwitch and modified the code to reflect that.
+-Changed the name to AutoPowerSaver and modified the code to reflect that.
 
 -Changed GUID variables to not be final.
 
