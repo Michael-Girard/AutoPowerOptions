@@ -14,11 +14,19 @@ Due to the requirement of knowing the GUID for each Power Options settings, whic
 Update January 23rd, 2017
 -----
 -Changed the name to AutoPowerSwitch and modified the code to reflect that.
+
 -Changed GUID variables to not be final.
+
 -Modified the batch names to be more generic.
+
 -Added getGUIDs() method that...
+
 ---Runs powercfg /list
+
 ---Reads the resulting GUID list into a StringBuilder
+
 ---Uses substring() and indexOf() methods to extract the Power Saver and High Performance GUIDs
+
 ---Assigns those GUIDs to the GUID variables
+
 ---In short, makes the program work with other systems without going through the hassle of modifying the code with the GUIDs manually.
