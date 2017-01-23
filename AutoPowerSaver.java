@@ -196,8 +196,10 @@ public class AutoPowerSaver implements Runnable{
          currentMouseLocation = MouseInfo.getPointerInfo().getLocation();
          if (currentMouseLocation.equals(lastMouseLocation)){
             count++;
+            //System.out.println(count + " of " + minutesToWait * SECONDS_IN_A_MINUTE);
             if(count >= (minutesToWait * SECONDS_IN_A_MINUTE) && highPerformance){
                try{
+                  //System.out.println("Idle Now");
                   rt.exec("cmd /c start /B RunOnIdle.bat");
                   highPerformance = false;
                }
@@ -207,7 +209,7 @@ public class AutoPowerSaver implements Runnable{
             }
          }
          else{
-            if(count >= minutesToWait * SECONDS_IN_A_MINUTE && !highPerformance){
+            if(!highPerformance){
                try{
                   rt.exec("cmd /c start /B RunOnActive.bat");
                   highPerformance = true;
