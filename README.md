@@ -9,7 +9,7 @@ The default threshold is 20 minutes, so 1200 poll cycles.
 
 The program resides in the system tray and the threshold duration can be modified to a number of different values by right clicking on the icon and selecting the new value. Goes as low as 5 minutes and as high as 60 minutes (5, 10, 15, 20, 30, 60). It does not currently accept custom values.
 
-~~Due to the requirement of knowing the GUID for each Power Options settings, which vary from system to system, the current program only works on my system. To get it working on yours, you must identify your GUIDs and replace the FINAL strings with them.~~ The program is currently set to swap to High Performance when activity is detected and Power Saving when activity is not detected. ~~This can be modified at the bottom of the code by swapping in the correct GUIDs/FINAL strings in the main method.~~
+~~Due to how the GUIDs for power options can vary on some systems, this program isn't guaranteed to work on everyone's computers. To be certain, you must identify your GUIDs and replace the FINAL strings with them.~~ The program is currently set to swap to High Performance when activity is detected and Power Saving when activity is not detected. ~~This can be modified at the bottom of the code by swapping in the correct GUIDs/FINAL strings in the main method.~~
 
 The Java_Icon.png should be in the same directory as the program, otherwise an exception will occur and the program will run with no icon in the system tray.
 
@@ -31,4 +31,4 @@ Update January 23rd, 2017
 
 ---Assigns those GUIDs to the GUID variables
 
----In short, makes the program work with other systems without going through the hassle of modifying the code with the GUIDs manually. But it's not as easy to modify which power option settings are switched between.
+---In short, makes the program work with all systems without going through the hassle of modifying the code with the GUIDs manually.
