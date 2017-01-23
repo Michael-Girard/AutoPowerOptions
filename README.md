@@ -11,7 +11,7 @@ The program resides in the system tray and the threshold duration can be modifie
 
 ~~Due to the requirement of knowing the GUID for each Power Options settings, which vary from system to system, the current program only works on my system. To get it working on yours, you must identify your GUIDs and replace the FINAL strings with them.~~ The program is currently set to swap to High Performance when activity is detected and Power Saving when activity is not detected. ~~This can be modified at the bottom of the code by swapping in the correct GUIDs/FINAL strings in the main method.~~
 
-The Java
+The Java_Icon.png should be in the same directory as the program, otherwise an exception will occur and the program will run with no icon in the system tray.
 
 Update January 23rd, 2017
 -----
